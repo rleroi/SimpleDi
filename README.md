@@ -9,6 +9,8 @@ Uses phpdoc's `@property` to automatically inject missing properties.
  * @property \App\World $world
  **/
 class MyClass {
+  use SimpleDi;
+
   function hello() {
     // 'world' property is automatically injected as a new \App\World()
     var_dump($this->world);
@@ -19,15 +21,16 @@ class MyClass {
 ### Singleton
 
 ```php
+// create an instance that should be injected every time for \App\World
+$world = new \App\World();
+SimpleDiService::singleton(\App\World::class, $world);
+
+
 /**
  * @property \App\World $world
  **/
 class MyClass {
-  function __construct() {
-    // create an instance that should be injected every time for \App\World
-    $world = new \App\World();
-    SimpleDiService::singleton(\App\World::class, $world);
-  }
+  use SimpleDi;
 
   function hello() {
     // 'world' property is automatically injected as the \App\World
@@ -40,14 +43,14 @@ class MyClass {
 ### Bind
 
 ```php
+// Create a callback that returns an instance that should be injected for \App\World
+SimpleDiService::bind(\App\World::class, fn () => new \App\World());
+
 /**
  * @property \App\World $world
  **/
 class MyClass {
-  function __construct() {
-    // Create a callback that returns an instance that should be injected for \App\World
-    SimpleDiService::bind(\App\World::class, fn () => new \App\World());
-  }
+  use SimpleDi;
 
   function hello() {
     // 'world' property is automatically injected as defined previously in SimpleDiService::bind();
