@@ -30,7 +30,8 @@ class MyClass {
   }
 
   function hello() {
-    // 'world' property is automatically injected as the \App\World instance defined previously in SimpleDiService::singleton();
+    // 'world' property is automatically injected as the \App\World
+    // instance defined previously in SimpleDiService::singleton();
     var_dump($this->world);
   }
 }
@@ -49,7 +50,7 @@ class MyClass {
   }
 
   function hello() {
-    // 'world' property is automatically injected as the \App\World defined previously in SimpleDiService::bind();
+    // 'world' property is automatically injected as defined previously in SimpleDiService::bind();
     var_dump($this->world);
   }
 }
