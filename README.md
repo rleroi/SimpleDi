@@ -4,7 +4,7 @@ Simple dependency injection
 Uses phpdoc's `@property` to automatically inject missing properties.
 
 ## Usage:
-```
+```php
 /**
  * @property \App\World $world
  **/
@@ -18,7 +18,7 @@ class MyClass {
 
 ### Singleton
 
-```
+```php
 /**
  * @property \App\World $world
  **/
@@ -38,7 +38,7 @@ class MyClass {
 
 ### Bind
 
-```
+```php
 /**
  * @property \App\World $world
  **/
