@@ -22,7 +22,7 @@ class MyClass {
 
 ```php
 // create an instance that should be injected every time for \App\World
-$world = new \App\World();
+$world = new \App\World('param');
 SimpleDiService::singleton(\App\World::class, $world);
 
 
@@ -44,7 +44,7 @@ class MyClass {
 
 ```php
 // Create a callback that returns an instance that should be injected for \App\World
-SimpleDiService::bind(\App\World::class, fn () => new \App\World());
+SimpleDiService::bind(\App\World::class, fn () => new \App\World('param'));
 
 /**
  * @property \App\World $world
