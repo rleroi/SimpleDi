@@ -1,0 +1,2 @@
+# SimpleDi
+Simple dependency injection
