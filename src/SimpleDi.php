@@ -2,7 +2,6 @@
 
 declare(strict_types=1);
 
-use Illuminate\Support\Facades\Log;
 use Jasny\PhpdocParser\PHPDocParser;
 use Jasny\PhpdocParser\Set\PhpDocumentor;
 use ReflectionClass;
