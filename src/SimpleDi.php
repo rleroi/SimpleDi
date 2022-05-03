@@ -2,8 +2,6 @@
 
 declare(strict_types=1);
 
-namespace App\Domain\Traits;
-
 use Illuminate\Support\Facades\Log;
 use Jasny\PhpdocParser\PHPDocParser;
 use Jasny\PhpdocParser\Set\PhpDocumentor;
@@ -33,9 +31,7 @@ trait SimpleDi
             || !isset($meta['properties'][$property]['type'])
             || !class_exists($meta['properties'][$property]['type'])
         ) {
-            Log::error('invalid @property ' . $property . ' ' . $meta['properties'][$property]['type']);
-
-            return;
+            return; // todo parent::__get() fallback
         }
         $class = $meta['properties'][$property]['type'];
 
