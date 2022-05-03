@@ -1,6 +1,6 @@
 {
     "name": "rleroi/simpledi",
-    "description": "Simple dependency innjection",
+    "description": "Simple dependency injection",
     "require": {
         "jasny/phpdoc-parser": "^1.0",
     }
