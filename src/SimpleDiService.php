@@ -2,12 +2,10 @@
 
 declare(strict_types=1);
 
-namespace App\Domain\Traits;
-
 final class SimpleDiService
 {
-    public static array $singletons = [];
-    public static array $binds = [];
+    private static array $singletons = [];
+    private static array $binds = [];
 
     /**
      * @return mixed|void
