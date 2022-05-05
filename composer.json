@@ -3,5 +3,8 @@
     "description": "Simple dependency injection",
     "require": {
         "jasny/phpdoc-parser": "^1.0",
+    },
+    "autoload": {
+        "psr-4": { "": "src/" }
     }
 }
